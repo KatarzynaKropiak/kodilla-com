@@ -2,35 +2,19 @@ package com.kodilla.testing;
 
 import com.kodilla.testing.calculator.Calculator;
 import com.kodilla.testing.user.SimpleUser;
+import com.kodilla.testing.collection.OddNumbersExterminator;
+
+import java.util.*;
 
 public class TestingMain {
 
     public static void main(String[] args) {
-        SimpleUser simpleUser = new SimpleUser("theForumUser");
+        List<Integer> listOfIntegers = new ArrayList<Integer>();
+        for (int n = 1; n < 100; n++) {
+                listOfIntegers.add(n);
+            }
 
-        String result = simpleUser.getUsername();
-
-        if (result.equals("theForumUser")) {
-            System.out.println("test OK");
-        } else {
-            System.out.println("Error!");
+            OddNumbersExterminator.exterminate(listOfIntegers);
         }
-        System.out.println("Test - pierwszy test jednostkowy:");
-
-        int a = -1;
-        int b = 2;
-
-        if (a + b == Calculator.add(a, b)) {
-            System.out.println("Test \"Calculator - add method\" is OK!");
-        } else {
-            System.out.println("Error!");
-        }
-        if (a - b == Calculator.subtract(a, b)) {
-            System.out.println("Test \"Calculator - subtract method\" is OK!");
-        } else {
-            System.out.println("Error!");
-        }
-
     }
 
-}
