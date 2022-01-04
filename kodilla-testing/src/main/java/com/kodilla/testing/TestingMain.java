@@ -13,8 +13,8 @@ public class TestingMain {
         for (int n = 1; n < 100; n++) {
                 listOfIntegers.add(n);
             }
-
-            OddNumbersExterminator.exterminate(listOfIntegers);
+            OddNumbersExterminator exterminator = new OddNumbersExterminator();
+            exterminator.exterminate(listOfIntegers);
         }
     }
 

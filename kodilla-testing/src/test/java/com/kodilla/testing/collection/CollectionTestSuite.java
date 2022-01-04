@@ -25,7 +25,8 @@ public class CollectionTestSuite {
         //Given
         List<Integer> listOfIntegers = new ArrayList<Integer>();
         //When
-        List<Integer> result = OddNumbersExterminator.exterminate(listOfIntegers);
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        List<Integer> result = exterminator.exterminate(listOfIntegers);
         //Then
         Assertions.assertTrue(result.isEmpty());
     }
@@ -43,7 +44,8 @@ public class CollectionTestSuite {
 //        evenNumbers.add(6);
 //        evenNumbers.add(8);
         //When
-        List<Integer> result = OddNumbersExterminator.exterminate(listOfIntegers);
+        OddNumbersExterminator exterminator = new OddNumbersExterminator();
+        List<Integer> result = exterminator.exterminate(listOfIntegers);
         //Then
         Assertions.assertEquals(Arrays.asList(2,4,6,8), result);
     }
