@@ -23,7 +23,7 @@ public class ShapeCollectorTestSuite {
             ShapeCollector collector1 = new ShapeCollector();
             collector1.addFigure(triangle);
 
-            Object o = collector1.shapes.get(0);
+            Object o = collector1.getFigure(0);
             System.out.println(o);
             Assertions.assertTrue(o instanceof Triangle);
         }
@@ -37,7 +37,8 @@ public class ShapeCollectorTestSuite {
             collector2.addFigure(triangle);
 
             collector2.removeFigure(triangle);
-            Assertions.assertTrue(collector2.shapes.isEmpty());
+
+            Assertions.assertNull(collector2.getFigure(0));
         }
 
         @Test
