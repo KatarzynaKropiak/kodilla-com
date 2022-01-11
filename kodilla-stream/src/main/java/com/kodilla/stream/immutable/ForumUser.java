@@ -13,6 +13,7 @@ public final class ForumUser {
         return username;
     }
 
+
     public String getRealName() {
         return realName;
     }
