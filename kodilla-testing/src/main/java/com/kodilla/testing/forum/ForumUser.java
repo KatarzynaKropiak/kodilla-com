@@ -14,6 +14,15 @@ public class ForumUser {
         this.name = name;
         this.realName = realName;
     }
+
+    public List<ForumPost> getPosts() {
+        return posts;
+    }
+
+    public List<ForumComment> getComments() {
+        return comments;
+    }
+
     public void addPost(String author, String postBody)
     {ForumPost thePost = new ForumPost(postBody, author);
         posts.add(thePost);}
