@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toUnmodifiableMap;
 
 class MovieStore {
 
@@ -29,9 +34,14 @@ class MovieStore {
     }
 
     public static void main(String[] args) {
-        MovieStore moviestore = new MovieStore();
-        moviestore.getMovies().entrySet().stream().forEach(entry->{
-           (entry.getValue()).stream().map(s -> s + " ! ").forEach(System.out::print);
-        });
+        MovieStore movieStore = new MovieStore();
+        String titles =
+                movieStore
+                        .getMovies()
+                        .values()
+                        .stream()
+                        .map(s -> s.stream().collect(Collectors.joining(" ! ")))
+                        .collect(Collectors.joining(" ! ", "", ""));
+        System.out.println(titles);
     }
 }
