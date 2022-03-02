@@ -13,7 +13,7 @@ public class FlightProcessor {
                         .stream()
                         .filter(f -> f.getDeparture().equals(departureAirport))
                         .map(Object::toString)
-                        .collect(Collectors.joining(" | ", " Flights from " + departureAirport + ": ", "."));
+                        .collect(Collectors.joining(" | ", "Flights from " + departureAirport + ": ", "."));
         System.out.println(flightsFrom);
 
         return flightsFrom;
@@ -27,7 +27,7 @@ public class FlightProcessor {
                         .stream()
                         .filter(f -> f.getArrival().equals(arrivalAirport))
                         .map(Object::toString)
-                        .collect(Collectors.joining(" | ", " Flights to  Warszawa " + arrivalAirport + "; ", "."));
+                        .collect(Collectors.joining(" | ", "Flights to " + arrivalAirport + ": ", "."));
         System.out.println(flightsTo);
 
         return flightsTo;
@@ -54,7 +54,7 @@ public class FlightProcessor {
             for (int j = 0; j < flightsFromList.size(); j++) {
                 if (flightsToList.get(i).getArrival().equals(flightsFromList.get(j).getDeparture()) &
                         !flightsToList.get(i).getDeparture().equals(flightsFromList.get(j).getArrival())) {
-                    System.out.println("Flights through " + transferAirport + ": " + flightsToList.get(i).toString() + flightsFromList.get(j));
+                    System.out.println("Flights through " + transferAirport + ": " + flightsToList.get(i).toString() + " & " + flightsFromList.get(j));
                 }
             }
         }
