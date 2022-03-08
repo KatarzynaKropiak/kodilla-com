@@ -8,10 +8,6 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-        (classes = {com.kodilla.spring.reader.Reader.class,
-                com.kodilla.spring.reader.Book.class,
-                com.kodilla.spring.reader.ReaderConfig.class })
-
 class ReaderTestSuite {
 
     @Test
