@@ -7,11 +7,15 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Lazy;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
     @SpringBootTest
-            (classes = {com.kodilla.spring.library.LibraryDbController.class, com.kodilla.spring.library.Library.class})
+            (classes = {com.kodilla.spring.library.LibraryDbController.class,
+                    com.kodilla.spring.library.Library.class,
+                    com.kodilla.spring.library.LibraryConfig.class })
 
     class LibraryTestSuite {
 
@@ -34,5 +38,19 @@ import static org.junit.jupiter.api.Assertions.*;
             library.saveToDb();
             //Then
             //do nothing
+        }
+
+        @Test
+        void testContext() {
+            //Given
+            ApplicationContext context =
+                    new AnnotationConfigApplicationContext("com.kodilla.spring");
+
+
+            //When & Then
+            System.out.println("===== Beans list: ==== >>");
+            Arrays.stream(context.getBeanDefinitionNames())
+                    .forEach(System.out::println);
+            System.out.println("<< ===== Beans list ====");
         }
     }
