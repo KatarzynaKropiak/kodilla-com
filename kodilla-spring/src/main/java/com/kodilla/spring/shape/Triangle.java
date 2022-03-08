@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
         @Override
         public String getShapeName() {
-            return "This is a circle.";
+            return "This is a triangle.";
         }
     }
 
