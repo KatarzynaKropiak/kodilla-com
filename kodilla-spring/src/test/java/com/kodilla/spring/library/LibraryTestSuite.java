@@ -12,45 +12,41 @@ import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
 
 
-    @SpringBootTest
-            (classes = {com.kodilla.spring.library.LibraryDbController.class,
-                    com.kodilla.spring.library.Library.class,
-                    com.kodilla.spring.library.LibraryConfig.class })
+@SpringBootTest
+class LibraryTestSuite {
 
-    class LibraryTestSuite {
+    @Autowired
+    private Library library;
 
-        @Autowired
-        private Library library;
-
-        @Test
-        public void testLoadFromDb() {
-            //Given
-            //When
-            library.loadFromDb();
-            //Then
-            //do nothing
-        }
-
-        @Test
-        public void testSaveToDb() {
-            //Given
-            //When
-            library.saveToDb();
-            //Then
-            //do nothing
-        }
-
-        @Test
-        void testContext() {
-            //Given
-            ApplicationContext context =
-                    new AnnotationConfigApplicationContext("com.kodilla.spring");
-
-
-            //When & Then
-            System.out.println("===== Beans list: ==== >>");
-            Arrays.stream(context.getBeanDefinitionNames())
-                    .forEach(System.out::println);
-            System.out.println("<< ===== Beans list ====");
-        }
+    @Test
+    public void testLoadFromDb() {
+        //Given
+        //When
+        library.loadFromDb();
+        //Then
+        //do nothing
     }
+
+    @Test
+    public void testSaveToDb() {
+        //Given
+        //When
+        library.saveToDb();
+        //Then
+        //do nothing
+    }
+
+    @Test
+    void testContext() {
+        //Given
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext("com.kodilla.spring");
+
+
+        //When & Then
+        System.out.println("===== Beans list: ==== >>");
+        Arrays.stream(context.getBeanDefinitionNames())
+                .forEach(System.out::println);
+        System.out.println("<< ===== Beans list ====");
+    }
+}
