@@ -16,7 +16,7 @@ class TaskFactoryTestSuite {
         //Then
         assertEquals("Shopping", shopping.getTaskName());
         assertEquals("Buy: 4.0 x Oranges", shopping.executeTask());
-        assertEquals(false, shopping.isTaskExecuted());
+        assertEquals(true, shopping.isTaskExecuted());
     }
 
     @Test
@@ -28,7 +28,7 @@ class TaskFactoryTestSuite {
         //Then
         assertEquals("Painting", painting.getTaskName());
         assertEquals("Painting wall blue", painting.executeTask());
-        assertEquals(false, painting.isTaskExecuted());
+        assertEquals(true, painting.isTaskExecuted());
     }
 
     @Test
