@@ -1,8 +1,17 @@
 package com.kodilla.hibernate.manytomany;
+import com.kodilla.hibernate.task.Task;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.retrieveCompanyStartingWithLetters",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE COMPANY_NAME like \"COM%\" ",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
@@ -38,7 +47,7 @@ public class Company {
         return employees;
     }
 
-    private void setEmployees(List<Employee> employees) {
+    public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
 
