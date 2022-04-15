@@ -8,8 +8,8 @@ import java.util.List;
 
 @NamedNativeQuery(
         name = "Company.retrieveCompanyStartingWithLetters",
-        query = "SELECT * FROM COMPANIES" +
-                " WHERE COMPANY_NAME like \"COM%\" ",
+        query = "SELECT * FROM COMPANIES WHERE substring(COMPANY_NAME,1,3) = :COMPANYNAME3LETTERS",
+
         resultClass = Company.class
 )
 

@@ -92,7 +92,7 @@ class CompanyDaoTestSuite {
 
         //When
        List<Employee> employeesLastname = employeeDao.retrieveLastname("Smith");
-       List<Company> companiesName = companyDao.retrieveCompanyStartingWithLetters();
+       List<Company> companiesName = companyDao.retrieveCompanyStartingWithLetters("COM");
 
         //Then
         try {
