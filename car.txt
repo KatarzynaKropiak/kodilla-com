@@ -1,0 +1,16 @@
+{
+	"name": "Mx-5",
+	"make": "Mazda",
+	"seat": [
+	  {"upholstery":"velur",
+		"color":"black"},
+	  {"upholstery":"velur",
+		"color":"black"}
+	  {"upholstery":"velur",
+		"color":"black"}
+	  {"upholstery":"velur",
+		"color":"black"}
+		]
+	"engine capacity": "2.0"
+
+}
