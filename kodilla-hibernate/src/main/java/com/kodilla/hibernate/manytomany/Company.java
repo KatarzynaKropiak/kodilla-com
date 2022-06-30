@@ -6,12 +6,23 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
+@NamedNativeQueries({
+
 @NamedNativeQuery(
         name = "Company.retrieveCompanyStartingWithLetters",
         query = "SELECT * FROM COMPANIES WHERE substring(COMPANY_NAME,1,3) = :COMPANYNAME3LETTERS",
 
         resultClass = Company.class
-)
+),
+
+@NamedNativeQuery(
+        name = "Company.findByPartOfName",
+        query = " SELECT * FROM COMPANIES" +
+                "  WHERE COMPANY_NAME LIKE CONCAT('%', :ARG , '%')",
+        resultClass = Company.class
+)}
+        )
+
 
 @Entity
 @Table(name = "COMPANIES")
